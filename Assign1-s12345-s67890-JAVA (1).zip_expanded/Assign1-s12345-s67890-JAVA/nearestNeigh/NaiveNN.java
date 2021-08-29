@@ -45,13 +45,15 @@ public class NaiveNN implements NearestNeigh{
 
 				for (Point currentPoint: nearestList)
 				{
-					if (currentPoint.distTo(searchTerm) < shortest.distTo(searchTerm)) {
+					
+					if ((currentPoint.distTo(searchTerm) < shortest.distTo(searchTerm))&&(currentPoint.cat).equals(searchTerm.cat)) {
 						shortest = currentPoint;
 					}
 				}
 				sorted.add(shortest);
 				nearestList.remove(shortest);
-			}
+				}
+			
 
 		}
 		return sorted;
